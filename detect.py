@@ -1,15 +1,15 @@
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import numpy as np
 import cv2
 import subprocess as s
 from tqdm import tqdm
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import math
 import sys
-import os
 import shutil
 
+# Thickness of the line
 # Dimensions
 dim = (278,182)
 
@@ -75,8 +75,9 @@ def detect(input_path, x1,y1,x2,y2,x3,y3,x4,y4, alert, show):
             # Drawing lines, if found any....
             try:
                 for line in lines:
+                    thickness = int(res.shape[0]/80)
                     for z1,b1,z2,b2 in line:
-                        cv2.line(blank, (z1,b1), (z2,b2), (0,255,255), 3)
+                        cv2.line(blank, (z1,b1), (z2,b2), (0,255,255), thickness)
             except:
                 pass
                     
@@ -92,7 +93,7 @@ def detect(input_path, x1,y1,x2,y2,x3,y3,x4,y4, alert, show):
             
     fps = 30
     path = 'frames/'
-    name = 'output/output.avi'
+    name = 'output/video/output.avi'
 
 
 
@@ -108,6 +109,7 @@ def detect(input_path, x1,y1,x2,y2,x3,y3,x4,y4, alert, show):
     cv2.destroyAllWindows()
     video.release()
             
+    # Play an alert sound if given value is true
     if alert==1:
         pygame.mixer.init()
         pygame.mixer.music.load("alert.wav")
@@ -117,6 +119,7 @@ def detect(input_path, x1,y1,x2,y2,x3,y3,x4,y4, alert, show):
         s.call(['notify-send', 'Detection Done!'])
         do = False
     
+    # Show the output results if given value is true
     if show==1:
         video = cv2.VideoCapture(name)
 
