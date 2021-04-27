@@ -11,7 +11,7 @@ In order to change the image resolution, modify the following: `line 14` in `det
 
 after cloning the repo, you need to install the project requirements by executing the following command in your terminal.
 <hr>
-### Optional
+### Optional  
 Create a virtual enviroment before installing the required dependencies
 <br>
 execute the following command to create a virtual enviroment  
