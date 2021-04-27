@@ -28,7 +28,7 @@ then activate the enviroment, within the project directory
 `env/Scripts/activate.bat`  
 <hr>
 Install the required dependencies  
-```pip install -r requirements.txt```  
+<code>pip install -r requirements.txt</code>
 <hr>
 
 ## Real-Time Detection
