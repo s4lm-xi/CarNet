@@ -3,7 +3,8 @@
 <hr>
 
 ## Note
-<code>Python 3.8.3</code>.
+<code>Python 3.8.3</code>.  
+
 In order to change the image resolution, modify the following: `line 14` in `detect.py`
 <hr>
 
@@ -64,6 +65,6 @@ Finally, the final point would be the remaining corner of the polygon which is t
 
 Then the program should be running using your default webcam, if running a third-party webcam please change the code however it suits your device.
 
-The detection will be on the same time as the program grabs each frame of the live stream, if you find some lanes arent being detected pleane fine-tune the **--thresh** argument accordingly
+The detection will be on the same time as the program grabs each frame of the live stream, if you find some lanes arent being detected please fine-tune the **--thresh** argument accordingly
 
 
